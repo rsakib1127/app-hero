@@ -1,0 +1,6 @@
+<div *ngIf="hero">
+  <input id="name" [(ngModel)]="hero.name" placeholder="Name">
+  <button class="btn-info" (click)="onClick(hero)">
+    save
+  </button>
+</div>

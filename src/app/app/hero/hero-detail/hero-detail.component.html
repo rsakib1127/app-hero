@@ -1,0 +1,18 @@
+
+<div *ngIf="hero; else noItemSeleted">
+
+  <h2>Hero's Details</h2>
+  <div><span>id: </span>{{hero.id}}</div>
+  <div>
+    <label for="hero-name">Hero name: </label>
+    <button class="btn-danger" (click)="onSelect(hero)" id="hero-name"  >
+      {{hero.name}}
+    </button>
+    <app-edit-hero [hero]="selectedHero"></app-edit-hero>
+  </div>
+
+</div>
+<ng-template #noItemSeleted>
+ Select Your Hero
+</ng-template>
+
