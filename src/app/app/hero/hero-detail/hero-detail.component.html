@@ -1,18 +1,10 @@
-
-<div *ngIf="hero; else noItemSeleted">
-
-  <h2>Hero's Details</h2>
+<div *ngIf="hero">
+  <h2>{{hero.name | uppercase}} Details</h2>
   <div><span>id: </span>{{hero.id}}</div>
   <div>
     <label for="hero-name">Hero name: </label>
-    <button class="btn-danger" (click)="onSelect(hero)" id="hero-name"  >
-      {{hero.name}}
-    </button>
-    <app-edit-hero [hero]="selectedHero"></app-edit-hero>
+    <input id="hero-name" [(ngModel)]="hero.name" placeholder="Hero name"/>
   </div>
-
+  <button class="btn btn-outline-success" (click)="saveHero(hero)">save</button>
+  <button class="btn btn-light" (click)="goBack()">go back</button>
 </div>
-<ng-template #noItemSeleted>
- Select Your Hero
-</ng-template>
-
